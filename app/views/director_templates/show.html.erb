@@ -130,7 +130,7 @@
     </th>
   </tr>
 
-  <% films = @the_director.order({ :year => :asc }) %>
+  <% films = @the_director.filmography.order({ :year => :asc }) %>
 
   <% films.each do |a_movie| %>
     <tr>

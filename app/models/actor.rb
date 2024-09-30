@@ -18,8 +18,8 @@ class Actor < ApplicationRecord
     return characters
   end
 
-  def time_ago_in_words(self)
-    year=self.parse.year
+  def time_ago_in_words(time)
+    year=time.parse.year
     current_year=Time.now.year
     difference= current_year - year 
     return "about #{difference}"

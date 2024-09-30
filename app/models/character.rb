@@ -11,13 +11,12 @@
 #
 class Character < ApplicationRecord
 
-  def movies
+  def movie
     #Given Character object, return movie associated with Character object
     movie_id=self.movie_id
     matching_movies=Movie.where({:id => movie_id})
     the_movie=matching_movies.at(0)
     return the_movie
-
   end
   
 end
