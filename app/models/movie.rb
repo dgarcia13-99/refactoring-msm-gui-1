@@ -18,7 +18,19 @@ class Movie < ApplicationRecord
     id=self.director_id #calling method on a Movie object
     matching_directors=Director.where({:id => id})
     the_director=matching_directors.at(0)
-    return the_director
+
+    if the_director != nil
+      return the_director
+    else
+       return "Uh oh! We weren't able to find a director for this movie."
+    end
   end
 
+  def time_ago_in_words(self)
+    year=self.parse.year
+    current_year=Time.now.year
+    difference= current_year - year 
+    return "about #{difference}"
+  end
+  
 end

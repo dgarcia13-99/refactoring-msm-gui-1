@@ -15,9 +15,14 @@ class Actor < ApplicationRecord
   def characters
     actor_id=self.id
     characters=Character.where({:actor_id => actor_id})
-    
     return characters
   end
 
+  def time_ago_in_words(self)
+    year=self.parse.year
+    current_year=Time.now.year
+    difference= current_year - year 
+    return "about #{difference}"
+  end
   
 end

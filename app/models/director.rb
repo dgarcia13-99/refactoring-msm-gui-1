@@ -18,8 +18,11 @@ class Director < ApplicationRecord
     return films
   end
 
-  def 
- 
+  def time_ago_in_words(self)
+    year=self.parse.year
+    current_year=Time.now.year
+    difference= current_year - year 
+    return "about #{difference}"
   end
 
 end
