@@ -18,8 +18,8 @@ class Director < ApplicationRecord
     return films
   end
 
-  
-
-
+  def 
+ 
+  end
 
 end
